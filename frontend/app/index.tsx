@@ -1,5 +1,7 @@
 import { Text, View } from "react-native";
 import QRCode from "react-qr-code";
+import Camera from "react-native-camera";
+
 import "../global.css";
 
 export default function Index() {
@@ -12,6 +14,10 @@ export default function Index() {
         value={"Hello"}
         viewBox={`0 0 256 256`}
       />
+      <Camera
+        aspect={Camera.constants.Aspect.fill}
+        captureAudio={false}
+      ></Camera>
     </View>
   );
 }
