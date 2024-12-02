@@ -31,6 +31,7 @@ function App() {
         style={{ width: "100%" }}
       />
       <p>{data}</p>
+      <button>Click me</button>
     </>
   );
 }
