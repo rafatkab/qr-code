@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect, useState } from "react";
 import { QrReader } from "react-qr-reader";
+import { Bluetooth } from "@types/web-bluetooth";
 import "./App.css";
 
 function App() {
@@ -16,12 +15,22 @@ function App() {
 
   const [data, setData] = useState("No result");
 
+  // function onResult(result, error) {
+  //         if (!!result) {
+  //           setData(result.text);
+  //         }
+
+  //         if (!!error) {
+  //           console.info(error);
+  //         }
+  //       }
+
   return (
     <>
       <QrReader
         onResult={(result, error) => {
           if (!!result) {
-            setData(result?.text);
+            setData(result?.getText());
           }
 
           if (!!error) {
