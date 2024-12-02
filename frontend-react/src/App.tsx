@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { QrReader } from "react-qr-reader";
-import { Bluetooth } from "@types/web-bluetooth";
 import "./App.css";
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
             console.info(error);
           }
         }}
-        style={{ width: "100%" }}
+        constraints={{ facingMode: "user" }}
       />
       <p>{data}</p>
       <button>Click me</button>
